@@ -63,7 +63,7 @@ table {
     --White:#ffffff; 
 }
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
-@media only screen and (min-width: 450px){
+
     h1, h2{
         font-family: "Kavoon";
     }
@@ -394,7 +394,7 @@ table {
     footer a{
         color:var(--White);
     }
-}
+
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
 @media screen and (min-width: 620px){
     header p #hideThis{
