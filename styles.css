@@ -1,0 +1,595 @@
+/* -------------------- IMPORTED FONTS -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kavoon&display=swap');
+
+/*-------------------- CSS RESET --------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* -------------------- ROOT VARIABLES  -------------------- */
+:root {
+    font-family: "Inter";
+    --Teal :#4CA7C0;
+   --Purple: #484FB7;
+    --Lavender: #6B8FE7;
+    --Yellow: #E9BB57; 
+    --Pink:#D9526F;
+    --Dark-gray:#1E1E1E; 
+    --White:#ffffff; 
+}
+/* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+@media only screen and (min-width: 450px){
+    h1, h2{
+        font-family: "Kavoon";
+    }
+    h1{
+        font-size: 3em;
+    }
+    Nav h2{
+        font-size:1.5em;
+    }
+    h2{
+        font-size: 2em;
+    }
+    h3{
+        font-size: 1.5em;
+    }
+    h4{
+        font-size: 1.15em;
+    }
+    html{
+        background-color: var(--Purple);
+    }
+    header{
+        grid-template-columns: 1fr;
+        color:var(--White);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    header h1{
+        padding: 50px 0px 20px 0px;
+        background-color: var(--Lavender);
+
+        border-radius: 0px 0px 25px 25px;
+    }
+    header p{
+        background-color: var(--Pink);
+        padding: 20px 0px 5px 0px;
+        border-radius: 0px 0px 25px 25px;
+        margin: 0px 10px 0px 10px;
+        z-index: -1;
+        position:relative;
+        top: -5px;
+        font-style: italic;
+        font-weight: bold;
+    }
+    header p #hideThis{
+        display:none;
+    }
+    nav{
+        background-color: var(--Yellow);
+        display:block;
+        text-align: center;
+        padding:15px 15px 15px 15px;
+        border-radius: 0px 0px 15px 15px;
+        position:fixed;
+        top:0px;
+        right:0px;
+        font-weight: bold;
+        font-style: italic;
+    }
+    nav h2{
+        display: none;
+    }
+    nav a{
+        text-decoration: none;
+        color: black;
+    }
+    nav:hover ul{
+        display: flex;
+        flex-direction: column;
+
+    }
+    nav:hover ul li a{
+        font-weight: bold;
+        display: block;
+        padding-top:5px;
+        gap:5px;
+        background-color: var(--White);
+        margin: 10px 10px 0px 10px;
+        padding: 10px 5px 10px 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    nav:hover ul li a:hover{
+        background-color: #ffeec9;
+        border-radius: 8px;
+    }
+    nav ul{
+        display:none;
+    }
+    #services h2{
+        color: var(--White);
+    }
+    #services h3{
+        color: var(--Yellow);
+        font-weight: bold;
+    }
+    #services{ 
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    #services h2{
+        margin-left:25px;
+    }
+    #oneOnOne h3{
+        margin-left:25px;
+    }
+    #oneOnOne{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top:10px;
+    }
+    #oneOnOne > .serviceItem{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+        background-color: var(--White);
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 15px;
+        padding: 25px;
+        border-radius: 25px;
+        line-height: 1.5em;
+
+    }
+    .serviceItem h4{
+        color: var(--Purple);
+        font-weight: bold;
+    }
+    #groupCoaching{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top:10px;
+    }
+    #groupCoaching h3{
+        margin-left:25px;
+    }
+    #groupCoaching > .serviceItem{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+        background-color: var(--White);
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 15px;
+        padding: 25px;
+        border-radius: 25px;
+        line-height: 1.5em;
+
+    }
+    #workshops{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top:10px;
+    }
+    #workshops h3{
+        margin-left:25px;
+    }
+    #workshops > .serviceItem{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+        background-color: var(--White);
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 15px;
+        padding: 25px;
+        border-radius: 25px;
+        line-height: 1.5em;
+
+    }
+    #onlineCourses{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top:10px;
+    }
+    #onlineCourses h3{
+        margin-left:25px;
+    }
+    #onlineCourses > .serviceItem{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+        background-color: var(--White);
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 15px;
+        padding: 25px;
+        border-radius: 25px;
+        line-height: 1.5em;
+
+    }
+    #whyUs{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        background-color: var(--Pink);
+    }
+    #whyUs h2{
+        color: var(--White);
+        padding-top:10px;
+        padding-bottom: 10px;
+        margin-left:25px;
+
+    }
+    #whyUs ul{
+        display: grid;
+        grid-template-columns:  50% 50%;
+        grid-template-rows: 50% 50%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+    #whyUs ul li{
+        background-color: var(--Teal);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin:10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 15px;
+        font-weight: bold;
+    }
+    #whyUs ul li ~ li{
+        background-color: var(--Lavender);
+    }
+    #whyUs ul li ~ li ~li{
+        background-color: var(--Yellow);
+    }
+    #whyUs ul li ~ li ~li ~li{
+        background-color: var(--White);
+    }
+    #pricing{
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: auto;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    #pricing h2{
+        color: var(--White);
+        margin-left: -75px;
+
+    }
+
+    #pricing h3{
+        color: var(--Yellow);
+        font-weight: bold;
+        margin-left: -75px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    #pricing table{
+        
+        background-color: var(--Yellow);
+
+    }
+    #pricing table th{
+        font-weight: bold;
+    }
+    #pricing table th, td{
+        border: 2px solid #E9BB57;
+        padding: 15px;
+    }
+    #pricing table td{
+        background-color: var(--White);
+        margin:2px;
+    }
+    #firstStep{
+        background-color: var(--Pink);
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    #firstStep h2{
+        color: var(--White);
+        padding-bottom: 10px;
+    }
+    #firstStep p{
+        color: var(--White);
+        line-height: 1.5em;
+
+    }
+    #firstStep a{
+        text-align: center;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 25px;
+        margin:10px 25px 15px 25px;
+        background-color: var(--White);
+        border-radius: 20px;
+        box-shadow: 10px 10px 5px;
+        
+    }
+    #firstStep a:hover{
+        box-shadow: 7px 7px 5px;
+        background-color: #ffeec9;
+    }
+    footer{
+        font-weight: bold;
+        color: var(--White);
+        background-color: var(--Lavender);
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap:50px;
+        padding: 50px;
+        border-radius: 0px 0px 40px 40px;
+        margin-bottom: 50px;
+    }
+    footer a{
+        color:var(--White);
+    }
+}
+/*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media screen and (min-width: 620px){
+    header p #hideThis{
+        display: inline;
+    }
+    #oneOnOne{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        gap:0px;
+    }
+    #oneOnOne h3{
+        grid-area: 1 / 1;
+    }
+    #oneOnOne .serviceItem{
+        grid-area: 2 / 1 ;
+    }
+    #oneOnOne .serviceItem ~ .serviceItem{
+        grid-area: 2 / 2 ;
+    }
+    #oneOnOne .serviceItem ~ .serviceItem ~.serviceItem{
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    #groupCoaching{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+    }
+    #groupCoaching h3{
+        grid-area: 1/1;
+    }    
+    #groupCoaching .serviceItem{
+        grid-area: 2/1;
+    }
+    #groupCoaching .serviceItem ~ .serviceItem{
+        grid-area: 2/2;
+    }
+    #whyUs ul{
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 1fr;
+    }
+    #pricing{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50% 50%;
+        margin-left:50px;
+    }
+    #pricing h2{
+        grid-row-start: 1;
+        grid-column-start:1;
+        margin-left: -20px;
+    }
+    #pricing section{
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+    #pricing section ~section{
+        grid-row-start: 2;
+        grid-column-start: 2;
+    }
+    #pricing section ~ section ~section{
+        grid-row-start:3;
+        grid-column-start: 1;
+    }
+    #pricing section ~ section ~section ~section{
+        grid-row-start:3;
+        grid-column-start: 2;
+    }
+    #pricing section h3{
+        margin-left: -20px;
+    }
+    #firstStep{
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+    
+        padding-bottom: 10px;
+    }
+    #firstStep h2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-bottom: 0;
+    }
+    #firstStep a{
+        display: block;
+        margin-bottom: 75px;
+    }
+
+}
+/*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width: 950px){
+    nav h3{
+        display: none;
+    }
+    nav{
+        display: flex;
+    }
+    nav ul{
+        display: flex;
+    }
+    nav:hover ul{
+        display: flex;
+        flex-direction: row;
+    }
+    nav:hover ul li a{
+        margin:0px;
+        padding:10px;
+    }
+    nav ul li{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #services{
+        grid-template-columns: auto auto auto auto ;
+        grid-template-rows: auto auto;
+        align-items:first baseline;
+        margin: 25px;
+    }
+    #services h2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start:1;
+        grid-row-end: 1;
+        margin-left: 0;
+    }
+    #services .serviceItem{
+        padding:20px;
+        margin: 10px 10px 10px 10px;
+
+    }
+    #services #oneOnOne{
+        grid-column-start: 1;
+        grid-row-start: 2;
+        display: flex;
+        flex-direction: column;
+        padding:0;
+        margin:0;
+    }
+    #services #groupCoaching{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+        flex-direction: column;
+    }
+    #services #workshops{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        display: flex;
+        flex-direction: column;
+    }
+    #services #onlineCourses{
+        grid-column-start: 4;
+        grid-row-start: 2;
+        display: flex;
+        flex-direction: column;
+
+    }
+    #pricing{
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 40px;
+        align-items:baseline;
+ 
+        
+    }
+    #pricing h2{
+
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+    #pricing #privateCoachingPrice{
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+    #pricing #groupCoachingPrice{
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+    #pricing #workshopPrice{
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+    #pricing #onlinePrice{
+        grid-column-start: 4;
+        grid-row-start: 2;
+    }
+}
+/*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media screen and (min-width:1280px){
+    body{
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-content: center;
+        align-items: center;
+    }
+}
